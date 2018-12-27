@@ -7,13 +7,7 @@ class BankAccount():
         self.nif = nif
         self.balance = balance
 
-    def set():
-        pass
-    
-    def get():
-        pass
-
-    def withdrawMoney(self, money):
+    def setWithdrawMoney(self, money):
         if money <= self.balance:
             self.balance -= money
         else:
@@ -25,4 +19,5 @@ class BankAccount():
 
 if __name__ == '__main__':
 
-    assert
+    myBankAccount = BankAccount('Alex', 'Navarro', 'C/ Despuig', 652147852, '4158746G')
+
