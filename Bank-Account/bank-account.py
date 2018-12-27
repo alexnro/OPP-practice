@@ -7,11 +7,41 @@ class BankAccount():
         self.nif = nif
         self.balance = balance
 
-    def setWithdrawMoney(self, money):
+    def getName(self):
+        return self.name
+    
+    def getSurnames(self):
+        return self.surnames
+
+    def getAddress(self):
+        return self.address
+    
+    def getPhoneNumber(self):
+        return self.phone_number
+    
+    def getNif(self):
+        return self.nif
+    
+    def getBalance(self):
+        return self.balance
+
+    def withdrawMoney(self, money):
         if money <= self.balance:
             self.balance -= money
         else:
             raise ValueError
+
+    def depositMoney(self, money):
+        self.balance += money
+
+    def checkBalance(self):
+        return self.balance
+
+    def negativeBalance(self):
+        if self.balance >= 0:
+            return True
+        else:
+            return False
 
     
 
@@ -19,5 +49,5 @@ class BankAccount():
 
 if __name__ == '__main__':
 
-    myBankAccount = BankAccount('Alex', 'Navarro', 'C/ Despuig', 652147852, '4158746G')
+    myBankAccount = BankAccount('Alex', 'Navarro', 'C/ Despuig', 652147852, '4158746G', 350)
 
