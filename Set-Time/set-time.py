@@ -32,6 +32,5 @@ class Time():
 if __name__ == '__main__':
 
     actualHour = Time()
-    assert actualHour(5, 20, 35) == '5:20:35'
-    assert actualHour(26, 50, 60) == '0:50:0'
-    assert actualHour(26, 61, 60) == '26:61:60'
+    actualHour.setTime(2, 25, 36)
+    actualHour.getTime()
