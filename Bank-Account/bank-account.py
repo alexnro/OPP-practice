@@ -26,9 +26,8 @@ class BankAccount():
         return self.balance
 
     def withdrawMoney(self, money):
-        if money <= self.balance:
-            self.balance -= money
-        else:
+        self.balance -= money
+        if self.balance < 0:
             raise ValueError
 
     def depositMoney(self, money):
@@ -42,12 +41,19 @@ class BankAccount():
             return True
         else:
             return False
-
     
 
+    
+myBankAccount = BankAccount("Alex", "Navarro", "C/ Despuig", 635789521, "46851294D", 600)
 
+if __name__ == "__main__":
 
-if __name__ == '__main__':
+	assert myBankAccount.depositMoney(100) == 700
+	assert myBankAccount.withdrawMoney(400) == 300
+	assert myBankAccount.negativeBalance() == False
+	assert myBankAccount.withdrawMoney(800) == ValueError
+	assert myBankAccount.negativeBalance() == True
+	assert myBankAccount.getName() == "Alex"
+	assert myBankAccount.getBalance() == -500
 
-    myBankAccount = BankAccount('Alex', 'Navarro', 'C/ Despuig', 652147852, '4158746G', 350)
 
