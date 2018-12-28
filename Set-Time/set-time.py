@@ -21,10 +21,17 @@ class Time():
         else:
             self.seconds = 0
 
-    def getTime(self.hour, self.minutes, self.seconds):
-        
-        
+    def getTime(self):
+        return f'{self.hour}:{self.minutes}:{self.seconds}'
+
+    def printTime(self):
+        print(getTime())
+
 
 
 if __name__ == '__main__':
 
+    actualHour = Time()
+    assert actualHour(5, 20, 35) == '5:20:35'
+    assert actualHour(26, 50, 60) == '0:50:0'
+    assert actualHour(26, 61, 60) == '26:61:60'
