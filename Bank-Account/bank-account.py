@@ -26,7 +26,7 @@ class BankAccount():
         return self.balance
 
     def withdrawMoney(self, money):
-        self.balance -= money
+        return self.balance -= money
         if self.balance < 0:
             raise ValueError
 

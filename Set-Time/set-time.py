@@ -28,9 +28,9 @@ class Time():
         print(getTime())
 
 
+actualHour = Time() 
 
 if __name__ == '__main__':
 
-    actualHour = Time()
     actualHour.setTime(2, 25, 36)
     actualHour.getTime()
