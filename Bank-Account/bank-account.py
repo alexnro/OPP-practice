@@ -42,8 +42,8 @@ class BankAccount():
         self.balance += money
 
 
-    def checkBalance(self):
-        return self.balance
+    def checkAccount(self):
+        return f'{self.name}, {self.surnames}, {self.address}, {self.phone_number}, {self.nif}, {self.balance}'
 
 
     def negativeBalance(self):
@@ -68,3 +68,16 @@ if __name__ == "__main__":
 
     myBankAccount.withdrawMoney(200)
     assert myBankAccount.getBalance() == 400
+
+    myBankAccount.depositMoney(500)
+    assert myBankAccount.getBalance() == 900
+
+    assert myBankAccount.checkAccount() == "Alex, Navarro, C/ Despuig, 635789521, 46851294D, 900"
+
+    assert myBankAccount.negativeBalance() == False
+
+    myBankAccount.withdrawMoney(900)
+    assert myBankAccount.negativeBalance() == False
+
+    myBankAccount.withdrawMoney(100)
+    assert myBankAccount.negativeBalance() == True
